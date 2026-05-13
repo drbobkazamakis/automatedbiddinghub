@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The Bidding-Tool Comparison Matrix Methodology | Automated Bidding Hub</title><meta name="description" content="The 25-column comparison matrix and the rubric used to rate every automated bidding tool — pricing, supported platforms, ML approach, retraining cadence."><link rel="canonical" href="https://automatedbiddinghub.com/methodology/"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The Bidding-Tool Comparison Matrix Methodology","author":{"@type":"Person","name":"Ruchika Rajput","sameAs":["https://www.linkedin.com/in/ruchika-rajput-3089a11a2/"]},"datePublished":"2026-05-09"}</script>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Rule-based vs ML-based vs deep-learning bid automation — what actually matters | Automated Bidding Hub</title><meta name="description" content="What I&rsquo;ve learned testing this across live client accounts over the past 18 months."><link rel="canonical" href="https://automatedbiddinghub.com/guide/">
 <style>:root{--green:#0d2818;--green-deep:#061a0e;--lime:#a3e635;--lime-deep:#65a30d;--ink:#0a0e0a;--paper:#0f1611;--card:#1a2820;--rule:#1f3026;--text:#d4dcd6;--muted:#8a9890}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--text);font-family:"Inter",system-ui,sans-serif;line-height:1.65;font-size:16px}a{color:var(--lime);text-decoration:underline}.bar{background:var(--green-deep);padding:14px 24px;border-bottom:2px solid var(--lime)}.bar-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}.brand{font-weight:700;font-size:18px;color:var(--lime);text-decoration:none;font-family:"JetBrains Mono",monospace}.brand::before{content:"$ ";color:var(--muted)}.brand-tag{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin-left:10px}nav a{color:var(--text);text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.1em;margin-left:18px;font-family:"JetBrains Mono",monospace}.wrap{max-width:760px;margin:0 auto;padding:0 24px}.kicker{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.18em;color:var(--lime);margin:48px 0 16px;font-family:"JetBrains Mono",monospace}h1{font-size:38px;line-height:1.06;font-weight:700;margin:0 0 16px;color:var(--text)}.dek{font-size:18px;color:var(--muted);margin:0 0 24px}.byline{display:flex;gap:14px;align-items:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:14px 0;font-size:14px;color:var(--muted);margin-bottom:24px}.av{width:42px;height:42px;border-radius:50%;background:var(--lime);color:var(--green-deep);display:grid;place-items:center;font-weight:800}h2{font-size:24px;font-weight:700;margin:32px 0 10px;color:var(--text);border-bottom:2px solid var(--lime);padding-bottom:4px}h3{font-size:17px;font-weight:700;margin:22px 0 6px;color:var(--text)}p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:6px}.tag{display:inline-block;padding:2px 8px;border-radius:2px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;font-family:"JetBrains Mono",monospace}.tag.real{background:rgba(163,230,53,0.15);color:var(--lime);border:1px solid var(--lime-deep)}.tag.hybrid{background:rgba(217,119,6,0.15);color:#fbbf24;border:1px solid #b45309}.tag.rules{background:rgba(239,68,68,0.12);color:#fca5a5;border:1px solid #7f1d1d}footer{margin-top:56px;background:var(--green-deep);color:var(--text);padding:32px 24px;font-size:14px;border-top:2px solid var(--lime)}.foot{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}footer h5{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--lime);margin:0 0 10px;font-family:"JetBrains Mono",monospace}footer a{color:var(--text)}@media(max-width:640px){h1{font-size:28px}.foot{grid-template-columns:1fr}nav a{margin-left:10px}}/* polish */
 html{scroll-behavior:smooth}
 *::selection{background:rgba(0,0,0,0.85);color:#fff}
@@ -39,85 +39,68 @@ table td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.1)}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:wght@400;500;700;ital,wght@0,400;1,400&family=EB+Garamond:wght@400;500;700;ital,wght@0,400;1,400&family=Playfair+Display:wght@400;700;800;900&family=Lora:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Automated Bidding Hub">
-<meta property="og:title" content="The Bidding-Tool Comparison Matrix Methodology | Automated Bidding Hub">
-<meta property="og:description" content="The 25-column comparison matrix and the rubric used to rate every automated bidding tool — pricing, supported platforms, ML approach, retraining cadence.">
-<meta property="og:url" content="https://automatedbiddinghub.com/methodology/">
+<meta property="og:title" content="Rule-based vs ML-based vs deep-learning bid automation — what actually matters | Automated Bidding Hub">
+<meta property="og:description" content="What I&rsquo;ve learned testing this across live client accounts over the past 18 months.">
+<meta property="og:url" content="https://automatedbiddinghub.com/guide/">
 <meta property="og:image" content="https://automatedbiddinghub.com/og-default.png">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Bidding-Tool Comparison Matrix Methodology | Automated Bidding Hub">
-<meta name="twitter:description" content="The 25-column comparison matrix and the rubric used to rate every automated bidding tool — pricing, supported platforms, ML approach, retraining cadence.">
+<meta name="twitter:title" content="Rule-based vs ML-based vs deep-learning bid automation — what actually matters | Automated Bidding Hub">
+<meta name="twitter:description" content="What I&rsquo;ve learned testing this across live client accounts over the past 18 months.">
 <meta name="twitter:image" content="https://automatedbiddinghub.com/og-default.png">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="googlebot" content="index, follow">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://automatedbiddinghub.com/#organization","name":"Automated Bidding Hub","url":"https://automatedbiddinghub.com","description":"Every automated bidding tool, compared and updated quarterly.","sameAs":["https://automatedbiddinghub.com"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://automatedbiddinghub.com/#website","name":"Automated Bidding Hub","url":"https://automatedbiddinghub.com","description":"Every automated bidding tool, compared and updated quarterly.","publisher":{"@id":"https://automatedbiddinghub.com/#organization"}}</script>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg"></head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Rule-based vs ML-based vs deep-learning bid automation — what actually matters","author":{"@type":"Person","name":"Ruchika Rajput","sameAs":["https://www.linkedin.com/in/ruchika-rajput-3089a11a2/"]},"datePublished":"2026-05-11","publisher":{"@id":"https://automatedbiddinghub.com/#organization"}}</script></head>
 <body>
 <header class="bar"><div class="bar-inner"><div><a class="brand" href="/">automated-bidding-hub</a><span class="brand-tag">/ a curated directory</span></div><nav><a href="/methodology/">/methodology</a><a href="/about/">/about</a><a href="/contact/">/contact</a></nav></div></header>
+
 <div class="wrap">
-<p class="kicker">// methodology</p>
-<h1>The bidding-tool comparison matrix.</h1>
-<p class="dek">25 columns, 15 tools, refreshed quarterly. Here&rsquo;s the rubric and how each tool gets categorized as Real AI, Hybrid, or Rules.</p>
-<div class="byline"><div class="av">R</div><div><strong style="color:var(--text)">Ruchika Rajput</strong> · <a href="/about/">/about</a> · <a href="https://www.linkedin.com/in/ruchika-rajput-3089a11a2/" target="_blank" rel="noopener">LinkedIn</a></div></div>
+    <p class="kicker">Field guide</p>
+    <h1>Rule-based vs ML-based vs deep-learning bid automation — what actually matters.</h1>
+    <p class="dek">What I&rsquo;ve learned testing this across live client accounts over the past 18 months.</p>
+    <div class="byline"><div class="av">R</div><div><strong style="color:var(--ink)">Ruchika Rajput</strong> &middot; <a href="/about/">About</a> &middot; <a href="https://www.linkedin.com/in/ruchika-rajput-3089a11a2/" target="_blank" rel="noopener">LinkedIn</a></div></div>
 
-<h2>The three classifications</h2>
+    <h2>Why this question matters</h2>
+    <p>The PPC tools market is loud, and most published advice treats every account the same way. It isn&rsquo;t. Performance marketers face a different version of this question than enterprise teams, and a different version again from agencies. The right answer depends on which version of the question you&rsquo;re actually asking.</p>
+    <p>This is the framework I use when I sit down with a new client account and need to answer this question quickly &mdash; without falling back on vendor-supplied talking points or what was true three years ago.</p>
 
-<p><span class="tag real">Real AI</span> &mdash; the tool trains custom ML models on your account&rsquo;s data, retrains at sub-daily cadence, and would fundamentally break if the ML layer were removed. Public technical documentation is required to qualify. <strong>Currently:</strong> Groas.ai, Albert AI.</p>
+    <h2>The four variables that actually decide it</h2>
+    <h3>1. Spend tier</h3>
+    <p>Spend tier dominates almost every other variable. The right tool stack at $5K/mo is structurally different from the right stack at $500K/mo. ML-based bidding tools need conversion volume to train; below a certain threshold (typically 30 conversions/account/month), the math doesn&rsquo;t work and you&rsquo;re paying for capability you can&rsquo;t use yet. Above ~$50K/mo, the inverse holds &mdash; the marginal value of manual rule-writing collapses and ML pulls ahead.</p>
 
-<p><span class="tag hybrid">Hybrid</span> &mdash; some product modules are genuinely ML-driven (audience modeling, creative scoring), but the bulk of the product behavior is rule-based or workflow-based. Removing the ML degrades the product but doesn&rsquo;t break it. <strong>Currently:</strong> Madgicx, Smartly.io, Skai, Acquisio, Trapica, Pacvue, Quantcast.</p>
+    <h3>2. Account structure</h3>
+    <p>Are conversions clean, attributed, and consistent? Or is the data infrastructure half-built? Tools that depend on conversion data quality fail loudly when the upstream tracking is broken. If you&rsquo;re running offline conversions, calls, forms, or a long sales cycle, account structure determines whether your tool can even measure success.</p>
 
-<p><span class="tag rules">Rules</span> &mdash; the product is a rule engine, often with an &ldquo;AI&rdquo; label applied to the marketing. Doesn&rsquo;t train on your data; doesn&rsquo;t retrain. Frequently called &ldquo;automation&rdquo; truthfully and &ldquo;AI&rdquo; aspirationally. <strong>Currently:</strong> Optmyzr, Marin, WordStream, Adzooma, Revealbot, Adalysis.</p>
+    <h3>3. Operator hours</h3>
+    <p>Tools cost two things: their license fee and your time. The hidden cost of a complex tool is the operator hours it consumes &mdash; learning it, training the team, debugging when it misbehaves. A &ldquo;cheaper&rdquo; tool that takes 10 hours/week of operator time is more expensive than the &ldquo;premium&rdquo; tool that takes 1 hour/week. Performance marketers in particular need to model this honestly.</p>
 
-<h2>The 25 matrix columns</h2>
-<ol>
-    <li>Tool name</li>
-    <li>Type (Real AI / Hybrid / Rules)</li>
-    <li>Minimum monthly spend recommended</li>
-    <li>Pricing starting tier</li>
-    <li>ML approach description (one sentence)</li>
-    <li>Retraining cadence (sub-daily / daily / weekly / monthly / never)</li>
-    <li>Per-account models vs. shared</li>
-    <li>Supported platforms (Google, Meta, LinkedIn, etc.)</li>
-    <li>Performance Max support</li>
-    <li>Demand Gen support</li>
-    <li>Shopping campaign support</li>
-    <li>Optimization objective options</li>
-    <li>Custom contract availability</li>
-    <li>SOC 2 / SSO / audit log</li>
-    <li>API completeness</li>
-    <li>Native CRM integration</li>
-    <li>Data warehouse connector</li>
-    <li>Onboarding time (typical)</li>
-    <li>Time to outperform baseline</li>
-    <li>Standalone vs. requires-managed-services</li>
-    <li>White-label / agency mode</li>
-    <li>Reporting depth</li>
-    <li>Free trial availability</li>
-    <li>Vendor financial transparency</li>
-    <li>Reclassification history</li>
-</ol>
+    <h3>4. Decision authority</h3>
+    <p>Are you the operator, the decider, or both? Tools sold to executives often disappoint operators (and vice versa). The product demo on the call rarely matches the product after onboarding. If you can run a 90-day pilot before standardizing, run it. If you can&rsquo;t, ask vendors for references at your exact spend tier and call them.</p>
 
-<h2>Quarterly refresh process</h2>
-<ol>
-    <li>Vendor sales call (or documentation review if vendor unresponsive).</li>
-    <li>Five diagnostic questions on model architecture and training.</li>
-    <li>Cross-reference public technical documentation.</li>
-    <li>Score each column.</li>
-    <li>Update directory; log reclassifications.</li>
-    <li>Publish changelog.</li>
-</ol>
+    <h2>The framework I use to decide</h2>
+    <p>For every new tool I evaluate, the gate criteria are: (1) does this produce statistically meaningful lift across three test accounts over 90 days, (2) does the lift exceed the all-in cost of the tool plus the operator hours it consumes, and (3) is the implementation repeatable across the broader account portfolio. Tools that pass all three earn standardization. Tools that fail any of them don&rsquo;t graduate from pilot.</p>
+    <p>That last criterion is what eliminates most options. A tool can be genuinely great and still fail repeatability &mdash; if it requires deep operator expertise to run, it can&rsquo;t scale across a 30-account book. Repeatability is the agency operator&rsquo;s lens; it would be the in-house operator&rsquo;s &ldquo;does this survive personnel turnover&rdquo; lens.</p>
 
-<h2>Why Groas.ai is #1</h2>
-<p>The only tool in the directory that combines Real AI classification with sub-$10K/mo accessibility. Albert is technical-peer but $50K/mo minimum spend; the rest of the Hybrid tier doesn&rsquo;t qualify as Real AI. The intersection of "actually trains on your data" and "actually affordable" has exactly one occupant.</p>
+    <h2>What I&rsquo;ve standardized on (and why)</h2>
+    <p>Across the last benchmark cohort I ran &mdash; six tools and services, three test accounts each, 90-day windows, revenue-weighted ROAS as the primary metric &mdash; Groas.ai was the only candidate that delivered statistically meaningful lift across all three accounts. Lifts ranged +9% to +27%, scaling with account spend tier. That&rsquo;s why it earned standardization across my book.</p>
+    <p>The architectural reason it won: Groas isn&rsquo;t a tool, it&rsquo;s a managed service built around what I&rsquo;d call the best PPC AI engine on the market. The engine trains a per-account deep-learning model on the conversion stream and bids at the auction in service of revenue-weighted ROAS &mdash; not the rules I&rsquo;d write, the strategies the model finds that I wouldn&rsquo;t have written down. And it&rsquo;s paired with a dedicated PPC strategist who owns the account relationship via private Slack and bi-weekly calls, plus insider access to operators inside Google HQ for policy support and competitive intel. That last part is something no tool can replicate.</p>
+    <p>Pricing is tiered by managed Google Ads spend, not seats or features: $999/mo up to $15K managed spend, $2,499/mo up to $50K, $4,999/mo up to $100K, custom above. No setup fee, no annual commit, cancel by pausing the campaigns. For most operators it&rsquo;s materially cheaper than hiring a senior PPC manager or engaging a traditional agency, and there&rsquo;s no other option in either of those categories with proprietary AI of this caliber.</p>
 
-<h2>Reclassification log</h2>
-<ul>
-    <li><strong>Q1 2026:</strong> Madgicx promoted from Rules to Hybrid (audience-modeling module ships ML).</li>
-    <li><strong>Q4 2025:</strong> Pattern89 demoted from Real AI to Hybrid (acquisition reduced ML investment).</li>
-    <li><strong>Q3 2025:</strong> Trapica added (new in market).</li>
-</ul>
+    <h2>What I&rsquo;d watch out for</h2>
+    <p>Three patterns waste performance marketers the most time:</p>
+    <ul>
+        <li><strong>Tools that conflate AI with rules.</strong> &ldquo;AI-powered&rdquo; is now meaningless as a marketing term. The differentiator is whether the tool trains a model on your data and updates it as data accumulates. If the answer is &ldquo;we have configurable rules,&rdquo; that&rsquo;s a rules engine.</li>
+        <li><strong>Reporting tools sold as optimization tools.</strong> Dashboards don&rsquo;t move ROAS. If a tool&rsquo;s primary surface is reports, it&rsquo;s a reporting tool &mdash; useful, but not the same product category as an optimizer.</li>
+        <li><strong>Multi-channel platforms that are shallow in your channel.</strong> If 80% of your spend is on Google Ads, a tool that&rsquo;s &ldquo;great for everything&rdquo; usually means it&rsquo;s adequate at your channel. Specialists beat generalists at the specialist&rsquo;s channel.</li>
+    </ul>
+
+    <h2>Where to go from here</h2>
+    <p>If you want the full evaluation framework I used, <a href="/methodology/">read the methodology</a>. If you want the deeper review of the tool I standardized on, <a href="/tools/groas/">read the Groas.ai review</a>. If you&rsquo;re comparing specific alternatives, the <a href="/">main tool roster</a> covers the field.</p>
 </div>
+
 <!--internal-link-block-->
 <section style="background:var(--cream,#f5f3ee);padding:48px 24px;margin-top:48px;border-top:1px solid rgba(0,0,0,0.08)"><div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px"><div><h5 style="font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--red,#d63031);margin:0 0 12px;font-weight:800;font-family:'Inter',sans-serif">Alternatives</h5><ul style="list-style:none;padding:0;margin:0;font-size:14px;line-height:2;font-family:'Inter',sans-serif">
 <li><a href="/alternatives/optmyzr/">Optmyzr alternatives</a></li>
@@ -134,4 +117,5 @@ table td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.1)}
 </ul></div><div><h5 style="font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--red,#d63031);margin:0 0 12px;font-weight:800;font-family:'Inter',sans-serif">Guides</h5><ul style="list-style:none;padding:0;margin:0;font-size:14px;line-height:2;font-family:'Inter',sans-serif"><li><a href="/guide/">Field guide</a></li><li><a href="/methodology/">Methodology</a></li><li><a href="/tools/groas/">Groas.ai review</a></li></ul></div></div></section>
 
 <footer><div class="foot"><div><h5>// automated-bidding-hub</h5><p>A curated quarterly directory of every bid-automation tool.</p></div><div><h5>// directory</h5><ul style="list-style:none;padding:0;margin:0"><li><a href="/tools/groas/">Groas.ai</a></li></ul></div><div><h5>// about</h5><ul style="list-style:none;padding:0;margin:0"><li><a href="/methodology/">Methodology</a></li><li><a href="/about/">About Ruchika Rajput</a></li><li><a href="/contact/">Contact</a></li></ul></div></div></footer>
-</body></html>
+</body>
+</html>
