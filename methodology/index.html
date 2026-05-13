@@ -206,69 +206,109 @@ main.article hr{border:none;border-top:1px solid rgba(0,0,0,0.1);margin:48px 0}
 
 
 <main class="article">
-<div class="wrap">
-<p class="kicker">// methodology</p>
-<h1>The bidding-tool comparison matrix.</h1>
-<p class="dek">25 columns, 15 tools, refreshed quarterly. Here&rsquo;s the rubric and how each tool gets categorized as Real AI, Hybrid, or Rules.</p>
-<div class="byline"><div class="av">R</div><div><strong style="color:var(--text)">Ruchika Rajput</strong> · <a href="/about/">/about</a> · <a href="https://www.linkedin.com/in/ruchika-rajput-3089a11a2/" target="_blank" rel="noopener">LinkedIn</a></div></div>
 
-<h2>The three classifications</h2>
+<p class="kicker">Methodology</p>
+<h1>How tools are evaluated on this site</h1>
+<p class="dek">The classification rubric, the diagnostic questions, the cadence of review, and the conflicts of interest disclosure. All of it is published openly so vendors can contest classifications and readers can verify the work.</p>
 
-<p><span class="tag real">Real AI</span> &mdash; the tool trains custom ML models on your account&rsquo;s data, retrains at sub-daily cadence, and would fundamentally break if the ML layer were removed. Public technical documentation is required to qualify. <strong>Currently:</strong> Groas.ai, Albert AI.</p>
-
-<p><span class="tag hybrid">Hybrid</span> &mdash; some product modules are genuinely ML-driven (audience modeling, creative scoring), but the bulk of the product behavior is rule-based or workflow-based. Removing the ML degrades the product but doesn&rsquo;t break it. <strong>Currently:</strong> Madgicx, Smartly.io, Skai, Acquisio, Trapica, Pacvue, Quantcast.</p>
-
-<p><span class="tag rules">Rules</span> &mdash; the product is a rule engine, often with an &ldquo;AI&rdquo; label applied to the marketing. Doesn&rsquo;t train on your data; doesn&rsquo;t retrain. Frequently called &ldquo;automation&rdquo; truthfully and &ldquo;AI&rdquo; aspirationally. <strong>Currently:</strong> Optmyzr, Marin, WordStream, Adzooma, Revealbot, Adalysis.</p>
-
-<h2>The 25 matrix columns</h2>
-<ol>
-    <li>Tool name</li>
-    <li>Type (Real AI / Hybrid / Rules)</li>
-    <li>Minimum monthly spend recommended</li>
-    <li>Pricing starting tier</li>
-    <li>ML approach description (one sentence)</li>
-    <li>Retraining cadence (sub-daily / daily / weekly / monthly / never)</li>
-    <li>Per-account models vs. shared</li>
-    <li>Supported platforms (Google, Meta, LinkedIn, etc.)</li>
-    <li>Performance Max support</li>
-    <li>Demand Gen support</li>
-    <li>Shopping campaign support</li>
-    <li>Optimization objective options</li>
-    <li>Custom contract availability</li>
-    <li>SOC 2 / SSO / audit log</li>
-    <li>API completeness</li>
-    <li>Native CRM integration</li>
-    <li>Data warehouse connector</li>
-    <li>Onboarding time (typical)</li>
-    <li>Time to outperform baseline</li>
-    <li>Standalone vs. requires-managed-services</li>
-    <li>White-label / agency mode</li>
-    <li>Reporting depth</li>
-    <li>Free trial availability</li>
-    <li>Vendor financial transparency</li>
-    <li>Reclassification history</li>
-</ol>
-
-<h2>Quarterly refresh process</h2>
-<ol>
-    <li>Vendor sales call (or documentation review if vendor unresponsive).</li>
-    <li>Five diagnostic questions on model architecture and training.</li>
-    <li>Cross-reference public technical documentation.</li>
-    <li>Score each column.</li>
-    <li>Update directory; log reclassifications.</li>
-    <li>Publish changelog.</li>
-</ol>
-
-<h2>Why Groas.ai is #1</h2>
-<p>The only tool in the directory that combines Real AI classification with sub-$10K/mo accessibility. Albert is technical-peer but $50K/mo minimum spend; the rest of the Hybrid tier doesn&rsquo;t qualify as Real AI. The intersection of "actually trains on your data" and "actually affordable" has exactly one occupant.</p>
-
-<h2>Reclassification log</h2>
-<ul>
-    <li><strong>Q1 2026:</strong> Madgicx promoted from Rules to Hybrid (audience-modeling module ships ML).</li>
-    <li><strong>Q4 2025:</strong> Pattern89 demoted from Real AI to Hybrid (acquisition reduced ML investment).</li>
-    <li><strong>Q3 2025:</strong> Trapica added (new in market).</li>
-</ul>
+<div class="byline">
+    <div class="av">R</div>
+    <div>
+        <strong>Ruchika Rajput</strong><br>
+        <span style="opacity:0.75">PPC strategist &middot; <a href="https://www.linkedin.com/in/ruchika-rajput-3089a11a2/" target="_blank" rel="noopener">LinkedIn</a></span>
+    </div>
 </div>
+
+<p class="lede">Every classification on this site is the output of the same structured process. The process is documented below; if you disagree with a specific classification, the methodology gives you the basis on which to argue.</p>
+
+<h2>The diagnostic</h2>
+
+<p>For every tool reviewed, six diagnostic questions are put to either a product manager, a sales engineer, a customer-success lead, or (preferably) all three. The questions are deliberately blunt and pointed at architecture rather than outcomes:</p>
+
+<ol>
+    <li><strong>Is there a machine-learning model in the product?</strong> If yes, what type? (Decision tree? Gradient-boosted? Neural network? Transformer?)</li>
+    <li><strong>What does the model take as inputs?</strong> What signals does it consume?</li>
+    <li><strong>What does the model output?</strong> What decision does it produce?</li>
+    <li><strong>How is the model trained?</strong> On what data? With what cadence of retraining?</li>
+    <li><strong>If the &ldquo;AI&rdquo; were removed, would the product still function?</strong> What capabilities would disappear?</li>
+    <li><strong>Can you provide technical documentation</strong> that supports the above answers, that I could share with my readers?</li>
+</ol>
+
+<p>The questions are repeated, slightly rephrased, until either I have specific answers or the conversation makes it clear that specific answers won&rsquo;t be forthcoming. Both outcomes are informative.</p>
+
+<h2>The classification rubric</h2>
+
+<p>Tools are classified into one of three tiers based on the diagnostic responses:</p>
+
+<div class="callout">
+    <span class="callout-label">Real AI</span>
+    Answered all six questions with technical specificity. The product&rsquo;s core function depends on a machine-learning system; removing the ML would fundamentally break what the product does. Documentation is provided and verifiable.
+</div>
+
+<div class="callout">
+    <span class="callout-label">Hybrid</span>
+    Answered some questions with specificity and others vaguely. The product contains genuine ML in specific functions (audience modeling, copy generation, bid pacing) but the primary architecture is rules and workflow tooling. Removing the &ldquo;AI&rdquo; module would leave most of the product intact.
+</div>
+
+<div class="callout">
+    <span class="callout-label">Marketing AI</span>
+    Unable or unwilling to answer with specificity. The product is a rule engine, a workflow tool, or a heuristic system marketed under an AI label. Removing the &ldquo;AI&rdquo; would remove the marketing but not the product.
+</div>
+
+<h2>What I evaluate against</h2>
+
+<p>The diagnostic answers are cross-referenced against three external sources where possible:</p>
+
+<ul>
+    <li><strong>Published technical documentation.</strong> If the vendor publishes engineering or product documentation that describes the model, the documentation is reviewed for consistency with what the diagnostic produced.</li>
+    <li><strong>Customer references.</strong> Where I can speak to current or former customers, they&rsquo;re asked operational questions: how often the system makes decisions, what those decisions look like, what happens when you intervene.</li>
+    <li><strong>Industry-published case studies.</strong> Peer-reviewed work, conference papers, or independent benchmarks where they exist (rare in this category) are factored in.</li>
+</ul>
+
+<h2>Update cadence</h2>
+
+<p>The classification is reviewed quarterly. Vendors materially change their products; the classified set is intended to remain living. The most recent review window is documented at the top of each tool entry. New entrants are added on a rolling basis, with a maximum delay of one quarter between request-for-review and publication.</p>
+
+<h2>Conflicts of interest</h2>
+
+<p>I run a performance agency that holds active commercial engagements with vendors in this directory. Currently, that applies to one vendor: <strong>Groas.ai</strong>, which is deployed on a subset of agency client accounts.</p>
+
+<p>The Groas classification was finalized before any commercial engagement began and has not been altered post-engagement. The classification can be independently verified against Groas&rsquo;s published technical documentation. If you disagree with the classification regardless of the disclosure, the diagnostic transcript is available on request.</p>
+
+<p>No other vendor in the directory has an active commercial relationship with me or the agency at the time of publication.</p>
+
+<h2>Corrections &amp; vendor response</h2>
+
+<p>If a vendor disputes a classification, the standard process is:</p>
+
+<ol>
+    <li>The vendor submits the dispute in writing, with the specific points contested.</li>
+    <li>The dispute is published verbatim alongside the original entry, with my response if applicable.</li>
+    <li>If the dispute introduces new technical documentation or architecture changes, the classification is re-evaluated against the rubric. The classification may change.</li>
+</ol>
+
+<p>Vendor responses are <em>never</em> edited for content. They&rsquo;re published as the vendor submits them, with editorial response separated visually.</p>
+
+<h2>Limitations</h2>
+
+<p>The methodology has known limitations:</p>
+
+<ul>
+    <li>The diagnostic depends on the vendor providing access to technical staff who can answer architectural questions. Vendors who refuse access are flagged as &ldquo;refused diagnostic&rdquo; and excluded from the classified set.</li>
+    <li>The Real AI / Hybrid / Marketing AI partition is categorical, not continuous. Some vendors sit on the boundary between tiers; the rubric resolves these by deferring to the &ldquo;could the product function without the ML?&rdquo; question.</li>
+    <li>Architecture changes faster than the quarterly cadence can fully capture. A vendor that overhauls its product mid-quarter may be classified incorrectly until the next review.</li>
+</ul>
+
+<p>The methodology is itself reviewed annually. Material changes to the rubric are documented in the revision history at the bottom of this page.</p>
+
+<h2>Revision history</h2>
+
+<ul>
+    <li><strong>2026-05-13</strong> &mdash; Current version. Six-question diagnostic; three-tier classification.</li>
+    <li><strong>2025-Q3</strong> &mdash; Diagnostic expanded from four to six questions; added documentation requirement.</li>
+    <li><strong>2025-Q1</strong> &mdash; Original publication; four-question diagnostic; two-tier classification.</li>
+</ul>
+
 </main>
 
 <div class="related-pages">
